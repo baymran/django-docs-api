@@ -28,7 +28,6 @@ class DocumentTypeAdmin(admin.ModelAdmin):
     list_display = ['id', 'name']
 
 
-# Регистрация моделей с соответствующими классами ModelAdmin
 admin.site.register(Document, DocumentAdmin)
 admin.site.register(Organization, OrganizationAdmin)
 admin.site.register(DocumentType, DocumentTypeAdmin)

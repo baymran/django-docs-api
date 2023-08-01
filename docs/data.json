@@ -1,0 +1,93 @@
+[
+{
+    "model": "api.organization",
+    "pk": 1,
+    "fields": {
+        "name": "ГУ МВД Первого района"
+    }
+},
+{
+    "model": "api.organization",
+    "pk": 2,
+    "fields": {
+        "name": "ГУ МВД Второго района"
+    }
+},
+{
+    "model": "api.organization",
+    "pk": 3,
+    "fields": {
+        "name": "ГУ МВД Третьего района"
+    }
+},
+{
+    "model": "api.organization",
+    "pk": 4,
+    "fields": {
+        "name": "ГУ МВД Четвертого района"
+    }
+},
+{
+    "model": "api.documenttype",
+    "pk": 1,
+    "fields": {
+        "name": "Паспорт"
+    }
+},
+{
+    "model": "api.documenttype",
+    "pk": 2,
+    "fields": {
+        "name": "Загран.паспорт"
+    }
+},
+{
+    "model": "api.documenttype",
+    "pk": 3,
+    "fields": {
+        "name": "Свидетельство о рождении"
+    }
+},
+{
+    "model": "api.document",
+    "pk": 1,
+    "fields": {
+        "type": 1,
+        "organization": 4,
+        "series": "XXX",
+        "number": "777000",
+        "date_of_issue": "1990-01-01",
+        "department_code": "111-234",
+        "main": true,
+        "archival": true
+    }
+},
+{
+    "model": "api.document",
+    "pk": 2,
+    "fields": {
+        "type": 2,
+        "organization": 1,
+        "series": "xxx",
+        "number": "xxx",
+        "date_of_issue": "2022-01-03",
+        "department_code": "xxx",
+        "main": false,
+        "archival": false
+    }
+},
+{
+    "model": "api.document",
+    "pk": 3,
+    "fields": {
+        "type": 3,
+        "organization": 3,
+        "series": "XXX",
+        "number": "777",
+        "date_of_issue": "2023-08-25",
+        "department_code": "999-000",
+        "main": true,
+        "archival": false
+    }
+}
+]

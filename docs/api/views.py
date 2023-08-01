@@ -37,7 +37,6 @@ class DocumentCreateView(generics.CreateAPIView):
         if not org_name:
             return Response({"organization": ["This field is required."]}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Дополнительная валидация типа и организации
         try:
             document_type = DocumentType.objects.get(name=type_name)
         except DocumentType.DoesNotExist:
@@ -65,7 +64,6 @@ class DocumentUpdateView(generics.UpdateAPIView):
         if not org_name:
             return Response({"org": ["This field is required."]}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Дополнительная валидация типа и организации
         try:
             document_type = DocumentType.objects.get(name=type_name)
         except DocumentType.DoesNotExist:
