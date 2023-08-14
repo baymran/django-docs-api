@@ -82,3 +82,8 @@ class DocumentUpdateView(generics.UpdateAPIView):
 class DocumentDeleteView(generics.DestroyAPIView):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
+
+    def destroy(self, request, *args, **kwargs):
+        instance = get_object_or_404(self.get_queryset(), pk=kwargs['pk'])
+        self.perform_destroy(instance)
+        return Response(status=status.HTTP_204_NO_CONTENT)
