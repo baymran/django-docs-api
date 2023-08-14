@@ -1,6 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import DocumentListCreateView, DocumentRetrieveUpdateView, OrganizationListView, DocumentTypeListView
+from .views import DocumentListCreateView, DocumentRetrieveUpdateView, OrganizationListView, DocumentTypeListView,\
+    DocumentDeleteView
 
 urlpatterns = [
     path('documents/', DocumentListCreateView.as_view(), name='Documents List'),
