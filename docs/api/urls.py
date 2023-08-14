@@ -5,8 +5,8 @@ from .views import DocumentListCreateView, DocumentRetrieveUpdateView, Organizat
 
 urlpatterns = [
     path('documents/', DocumentListCreateView.as_view(), name='Documents List'),
-    path('documents/<int:pk>/', DocumentRetrieveUpdateView.as_view(), name='Document Update'),
+    path('documents/<int:pk>/', DocumentRetrieveUpdateView.as_view(), ['PUT', 'PATCH'], name='Document Update'),
     path('organizations/', OrganizationListView.as_view(), name='organization-list'),
     path('document-types/', DocumentTypeListView.as_view(), name='document-type-list'),
-    path('documents/<int:pk>/', DocumentDeleteView.as_view(), name='document-delete'),
+    path('documents/<int:pk>/', DocumentDeleteView.as_view(), ['DELETE'], name='document-delete'),
 ]
