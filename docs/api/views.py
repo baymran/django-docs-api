@@ -1,6 +1,8 @@
 from rest_framework import generics
 from .models import Document, Organization, DocumentType
 from .serializers import DocumentSerializer, OrganizationSerializer, DocumentTypeSerializer
+from rest_framework.response import Response
+from rest_framework import status
 
 
 class DocumentListCreateView(generics.ListCreateAPIView):
@@ -75,3 +77,8 @@ class DocumentUpdateView(generics.UpdateAPIView):
             return Response({"org": ["Invalid organization."]}, status=status.HTTP_400_BAD_REQUEST)
 
         serializer.save(type=document_type, organization=organization)
+
+
+class DocumentDeleteView(generics.DestroyAPIView):
+    queryset = Document.objects.all()
+    serializer_class = DocumentSerializer
