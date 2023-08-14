@@ -8,5 +8,5 @@ urlpatterns = [
     path('documents/<int:pk>/', DocumentRetrieveUpdateView.as_view(), {'put': 'update', 'patch': 'partial_update'}, name='Document Update'),
     path('organizations/', OrganizationListView.as_view(), name='organization-list'),
     path('document-types/', DocumentTypeListView.as_view(), name='document-type-list'),
-    path('documents/<int:pk>/', DocumentDeleteView.as_view(), {'delete': 'destroy'}, name='document-delete'),
+    path('documents/<int:pk>/delete/', DocumentDeleteView.as_view(), {'delete': 'destroy'}, name='document-delete'),
 ]
